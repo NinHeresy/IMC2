@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,15 +50,28 @@ public class ActivityChild extends AppCompatActivity {
 
         //spinner para definir o sexo do usuario
         spn = (Spinner)findViewById(R.id.spinner);
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.sexo_child,android.R.layout.simple_list_item_1);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
         spn.setAdapter(adapter);
 
-
-
+        AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l){
+                //String item = spn.getSelectedItem().toString();
+                if (i == 0){
+                    Toast.makeText(getApplicationContext(), "Masculino!", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Feminino!", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        };
+        //obtem qual item da lista foi clicado
+        spn.setOnItemSelectedListener(escolha);
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
