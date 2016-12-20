@@ -1,0 +1,11 @@
+<resources>
+    <!--activity principal-->
+    <string name="app_name">Indice de Massa Corporal</string>
+    <string name="name_app">IMC</string>
+    <string name="str_top">Preencha os campos abaixos!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--aplication IMC crianca activity2 -->
+    <string name="app_crianca">IMC para Criança</string>
+
+</resources>
