@@ -8,4 +8,12 @@
     <!--aplication IMC crianca activity2 -->
     <string name="app_crianca">IMC para Criança</string>
 
+
+    <!--SPINNER CHILD-->
+    <string-array name="sexo_child">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+
+
 </resources>
