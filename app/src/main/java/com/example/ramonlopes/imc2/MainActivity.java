@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio ou contem letras!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio ou contem letras!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     campPeso.requestFocus();
                 } else {
                     open();
