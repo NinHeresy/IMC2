@@ -13,4 +13,11 @@
         android:id="@+id/to_tutorial"
         android:title="Recomendações"
         />
+    <group
+        android:id="@+id/group_shild">
+        <item
+        android:id="@+id/rights"
+        android:title="Copyright" />
+    </group>
+
 </menu>
