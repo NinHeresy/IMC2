@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Double resultadoImc;
         Float altura, peso;
 
+
         altura = Float.parseFloat(campAltura.getText().toString());
         peso = Float.parseFloat(campPeso.getText().toString());
 
