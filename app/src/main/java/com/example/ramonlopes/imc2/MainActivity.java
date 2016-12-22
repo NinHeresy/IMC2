@@ -14,7 +14,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText campPeso, campAltura;
-    Button btnCalc;
+    //Button btnCalc;
+    
+    protected Button btnCalc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Campo Peso está vazio!", Toast.LENGTH_SHORT).show();
                     campPeso.requestFocus();
                 } else {
                     open();

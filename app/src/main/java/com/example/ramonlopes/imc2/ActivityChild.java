@@ -81,7 +81,7 @@ public class ActivityChild extends AppCompatActivity {
         altura = Float.parseFloat(edtAltura.getText().toString());
         peso = Float.parseFloat(edtPeso.getText().toString());
 
-        resultadoImc = peso / (Math.pow(altura, 2));
+        resultadoImc = peso / Math.pow(altura, 2);
         String resultIMC = String.format("%.2f", resultadoImc);
 
         Toast.makeText(getApplicationContext(), "Valor é: " + resultIMC, Toast.LENGTH_SHORT).show();
