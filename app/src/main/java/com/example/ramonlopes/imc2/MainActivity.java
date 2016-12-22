@@ -12,10 +12,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.ViewById;
+
 public class MainActivity extends AppCompatActivity {
-    EditText campPeso, campAltura;
-    //Button btnCalc;
-    
+    //EditText campPeso, campAltura;
+
+    //instacia das views
+    @ViewById(R.id.edt1)
+    EditText campPeso;
+    @ViewById(R.id.edt2)
+    EditText campAltura;
+    @ViewById(R.id.btn)
     protected Button btnCalc;
 
 
@@ -23,10 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btnCalc = (Button) findViewById(R.id.btn);
-        campAltura = (EditText) findViewById(R.id.edt1);
-        campPeso = (EditText) findViewById(R.id.edt2);
 
         btnCalc.setOnClickListener(new View.OnClickListener() {
             @Override
