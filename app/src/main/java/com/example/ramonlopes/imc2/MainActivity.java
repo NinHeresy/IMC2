@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (campPeso.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Campo Peso está vazio!", Toast.LENGTH_SHORT).show();
                     campPeso.requestFocus();
-                } else {
-                    open();
-                }
+                } //else {
+                //open();
+                //}
             }
         });
     }
