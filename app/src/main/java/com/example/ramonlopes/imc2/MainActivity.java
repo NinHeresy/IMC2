@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = (Button)findViewById(R.id.btn);
-        campPeso = (EditText)findViewById(R.id.edt2);
-        campAltura = (EditText)findViewById(R.id.edt1);
+        btn = (Button) findViewById(R.id.btn);
+        campPeso = (EditText) findViewById(R.id.edt2);
+        campAltura = (EditText) findViewById(R.id.edt1);
 
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().equals("")) {
@@ -61,14 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         resultadoImc = peso / (Math.pow(altura, 2));
         String resultIMC = String.format("%.2f", resultadoImc);
-
-        new MDDialog.Builder(this)
-                .setTitle("")
-
-
-
-
-                .create().show();
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         if (resultadoImc < 17) {
@@ -144,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //oinspection SimplifiableIfStatement
-        if (id == R.id.nav_child){
-            Intent intent = new Intent(this,ActivityChild.class);
+        if (id == R.id.nav_child) {
+            Intent intent = new Intent(this, ActivityChild.class);
             startActivity(intent);
             return true;
         }
