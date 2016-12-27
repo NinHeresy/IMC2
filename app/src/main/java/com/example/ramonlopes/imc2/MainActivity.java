@@ -12,26 +12,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.ViewById;
 
+import cn.carbs.android.library.MDDialog;
+
+
+@EBean
 public class MainActivity extends AppCompatActivity {
-    //EditText campPeso, campAltura;
 
-    //instacia das views
-    @ViewById(R.id.edt1)
-    EditText campPeso;
-    @ViewById(R.id.edt2)
-    EditText campAltura;
-    @ViewById(R.id.btn)
-    protected Button btnCalc;
-
+    public EditText campPeso;
+    public EditText campAltura;
+    public Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnCalc.setOnClickListener(new View.OnClickListener() {
+        btn = (Button)findViewById(R.id.btn);
+        campPeso = (EditText)findViewById(R.id.edt2);
+        campAltura = (EditText)findViewById(R.id.edt1);
+
+        btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().equals("")) {
@@ -51,13 +56,19 @@ public class MainActivity extends AppCompatActivity {
         Double resultadoImc;
         Float altura, peso;
 
-
         altura = Float.parseFloat(campAltura.getText().toString());
         peso = Float.parseFloat(campPeso.getText().toString());
 
         resultadoImc = peso / (Math.pow(altura, 2));
         String resultIMC = String.format("%.2f", resultadoImc);
 
+        new MDDialog.Builder(this)
+                .setTitle("")
+
+
+
+
+                .create().show();
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         if (resultadoImc < 17) {

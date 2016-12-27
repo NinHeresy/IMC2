@@ -2,6 +2,8 @@
 
 buildscript {
     repositories {
+        //usado para o androidAnnotacions
+        mavenCentral()
         jcenter()
     }
     dependencies {
@@ -13,12 +15,15 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+//usado para androidAnnotacions
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
 
 allprojects {
     repositories {
         jcenter()
-        mavenCentral()
-        mavenLocal()
     }
 }
 
