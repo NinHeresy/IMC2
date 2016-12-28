@@ -12,15 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.EBean;
-import org.androidannotations.annotations.ViewById;
-
-import cn.carbs.android.library.MDDialog;
 
 
-@EBean
 public class MainActivity extends AppCompatActivity {
 
     public EditText campPeso;
@@ -45,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (campPeso.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Campo Peso está vazio!", Toast.LENGTH_SHORT).show();
                     campPeso.requestFocus();
-                } //else {
-                //open();
-                //}
+                } else {
+                    open();
+                }
             }
         });
     }
@@ -62,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
         resultadoImc = peso / (Math.pow(altura, 2));
         String resultIMC = String.format("%.2f", resultadoImc);
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        //instancia da classe
+        DialogInteger teste = new DialogInteger();
+        teste.dialogInteger(resultadoImc,resultIMC);
+
+
+       /* AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         if (resultadoImc < 17) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
             alertDialogBuilder.setMessage("MUITO ABAIXO DO PESO!" +
@@ -119,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+        */
+
     }
 
 

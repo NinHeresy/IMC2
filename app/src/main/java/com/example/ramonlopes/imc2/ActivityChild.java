@@ -57,10 +57,10 @@ public class ActivityChild extends AppCompatActivity {
         AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) {
-                    //calcMac();
-                } else if (i == 1) {
-
+                if (i == 1) {
+                    Toast.makeText(getApplicationContext(), "Selecionado o !"+ i, Toast.LENGTH_SHORT).show();
+                } else if (i == 2) {
+                    Toast.makeText(getApplicationContext(), "Selecionado o !"+ i, Toast.LENGTH_SHORT).show();
                 }
             }
 
