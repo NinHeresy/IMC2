@@ -55,12 +55,8 @@ public class MainActivity extends AppCompatActivity {
         resultadoImc = peso / (Math.pow(altura, 2));
         String resultIMC = String.format("%.2f", resultadoImc);
 
-        //instancia da classe
-        DialogInteger teste = new DialogInteger();
-        teste.dialogInteger(resultadoImc,resultIMC);
 
-
-       /* AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         if (resultadoImc < 17) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
             alertDialogBuilder.setMessage("MUITO ABAIXO DO PESO!" +
@@ -117,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-        */
 
     }
 
