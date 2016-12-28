@@ -11,7 +11,7 @@
 
     <!--SPINNER CHILD-->
     <string-array name="sexo_child">
-        <item>Escolha uma opção abaixo:</item>
+        <item>Escolha uma opção:</item>
         <item>Masculino</item>
         <item>Feminino</item>
     </string-array>

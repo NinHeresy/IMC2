@@ -32,7 +32,34 @@ public class ActivityChild extends AppCompatActivity {
         btn = (Button) findViewById(R.id.submit);
         edtAltura = (EditText) findViewById(R.id.edt1);
         edtPeso = (EditText) findViewById(R.id.edt2);
+        spin = (Spinner)findViewById(R.id.spinner);
 
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_child, android.R.layout.simple_list_item_1);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spin.setAdapter(adapter);
+
+
+        final AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 1) {
+                    Toast.makeText(getApplicationContext(), "Selecionado o !" + i, Toast.LENGTH_SHORT).show();
+                } else if (i == 2) {
+                    Toast.makeText(getApplicationContext(), "Selecionado o !" + i, Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        };
+        //obtem qual item da lista foi clicado
+        spin.setOnItemSelectedListener(escolha);
+
+        nullcampos();
+    }
+    public void nullcampos(){
+        //verificando se os campos estao preenchidos
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,32 +74,9 @@ public class ActivityChild extends AppCompatActivity {
                 }
             }
         });
-        spin = (Spinner) findViewById(R.id.spinner);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_child, android.R.layout.simple_list_item_1);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spin.setAdapter(adapter);
-
-
-        AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 1) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o !"+ i, Toast.LENGTH_SHORT).show();
-                } else if (i == 2) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o !"+ i, Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        };
-        //obtem qual item da lista foi clicado
-        spin.setOnItemSelectedListener(escolha);
     }
 
+    //Math do IMC
     public void calcChild() {
 
         Double resultadoImc;

@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +22,7 @@
 
         <!--activity child-->
         <activity
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity"
             android:label="@string/app_crianca"
             android:name=".ActivityChild">

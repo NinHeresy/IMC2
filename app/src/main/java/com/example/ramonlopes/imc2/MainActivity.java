@@ -13,12 +13,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
-    public EditText campPeso;
-    public EditText campAltura;
-    public Button btn;
+    EditText campPeso;
+    EditText campAltura;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     public void open() {
         Double resultadoImc;
         Float altura, peso;
