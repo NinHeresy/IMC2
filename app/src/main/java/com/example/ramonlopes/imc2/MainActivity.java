@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     public EditText campAltura;
     Button btn;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
