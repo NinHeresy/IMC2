@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText campPeso;
-    EditText campAltura;
+    public EditText campPeso;
+    public EditText campAltura;
     Button btn;
 
     @Override
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void open() {
         Double resultadoImc;
         Float altura, peso;

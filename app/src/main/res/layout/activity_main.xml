@@ -36,7 +36,7 @@
             android:layout_toEndOf="@+id/imgPeso"
             android:layout_toRightOf="@+id/imgPeso"
             android:hint="Peso:(em Kg)"
-            android:inputType="phone|numberDecimal"
+            android:inputType="numberDecimal"
             android:textSize="18sp"
             android:textStyle="normal|bold" />
 
@@ -52,7 +52,7 @@
             android:layout_toEndOf="@+id/imgAltura"
             android:layout_toRightOf="@+id/imgAltura"
             android:hint="Altura(em Metros):"
-            android:inputType="phone|numberDecimal"
+            android:inputType="numberDecimal"
             android:textSize="18sp"
             android:textStyle="normal|bold" />
 
