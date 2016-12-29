@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (campAltura.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
+                if (campAltura.getText().toString().length() == 0) {
+                    campAltura.setError("Campo Altura Inválido !");
+                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     campAltura.requestFocus();
-                } else if (campPeso.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo Peso está vazio!", Toast.LENGTH_SHORT).show();
+                } else if (campPeso.getText().toString().length() == 0) {
+                    campPeso.setError("Campo Peso Inválido !");
+                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     campPeso.requestFocus();
                 } else {
                     open();
