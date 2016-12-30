@@ -32,12 +32,12 @@
         android:hint="Peso (Kg)"
         android:maxLength="3"
         android:inputType="numberDecimal"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/edt1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/edt1"
-        android:layout_alignStart="@+id/edt1" />
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imgAltura"
+        android:layout_alignLeft="@+id/spinner"
+        android:layout_alignStart="@+id/spinner"
+        android:layout_alignRight="@+id/edt1"
+        android:layout_alignEnd="@+id/edt1" />
 
     <EditText
         android:id="@+id/edt1"
@@ -45,16 +45,16 @@
         android:layout_height="49dp"
         style="@style/EditTextStyle"
         android:textSize="18sp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="59dp"
         android:textStyle="normal|bold"
         android:inputType="numberDecimal"
         android:hint="Altura (M²)"
         android:maxLength="3"
         android:layout_below="@+id/txtcabecalho"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/imgAltura"
-        android:layout_toRightOf="@+id/imgAltura" />
+        android:layout_alignLeft="@+id/txtcabecalho"
+        android:layout_alignStart="@+id/txtcabecalho"
+        android:layout_alignRight="@+id/txtcabecalho"
+        android:layout_alignEnd="@+id/txtcabecalho" />
 
     <TextView
         android:id="@+id/txtcabecalho"
@@ -74,16 +74,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/edt1"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:src="@drawable/casal"
+        android:layout_alignBottom="@+id/edt1" />
 
     <ImageView
         android:id="@+id/imgPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_round"
+        android:src="@drawable/peso"
         android:layout_alignTop="@+id/edt2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/spinner"
+        android:layout_above="@+id/textView"
+        android:layout_alignRight="@+id/imgAltura"
+        android:layout_alignEnd="@+id/imgAltura"
+        android:layout_toLeftOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/textView"
@@ -97,8 +103,8 @@
         android:text="Sexo:"
         android:textColor="@color/Black"
         android:textSize="22sp"
-        android:layout_toLeftOf="@+id/edt2"
-        android:layout_toStartOf="@+id/edt2" />
+        android:layout_toStartOf="@+id/spinner"
+        android:layout_toLeftOf="@+id/spinner" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -107,9 +113,9 @@
         android:entries="@array/sexo_child"
         android:layout_alignBaseline="@+id/textView"
         android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/txtcabecalho"
-        android:layout_alignStart="@+id/txtcabecalho"
-        android:layout_alignRight="@+id/txtcabecalho"
-        android:layout_alignEnd="@+id/txtcabecalho" />
+        android:layout_alignLeft="@+id/edt1"
+        android:layout_alignStart="@+id/edt1"
+        android:layout_alignRight="@+id/edt1"
+        android:layout_alignEnd="@+id/edt1" />
 </RelativeLayout>
 
