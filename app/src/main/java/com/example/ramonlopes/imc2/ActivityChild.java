@@ -44,12 +44,11 @@ public class ActivityChild extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 1) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o !" + i, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Selecionado o item = " + i, Toast.LENGTH_SHORT).show();
                 } else if (i == 2) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o !" + i, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Selecionado o item = " + i, Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 

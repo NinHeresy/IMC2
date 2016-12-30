@@ -12,12 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.Click;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Objects;
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public EditText campPeso;
     public EditText campAltura;
-    Button btn;
+    Button btn, btnLimp;
 
 
     @Override
@@ -26,25 +30,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn = (Button) findViewById(R.id.btn);
+        btnLimp = (Button) findViewById(R.id.btnLimpar);
         campPeso = (EditText) findViewById(R.id.edt2);
         campAltura = (EditText) findViewById(R.id.edt1);
+
+        btnLimp.setOnClickListener(this);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().length() == 0) {
-                    campAltura.setError("Campo Altura Inválido !");
-                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
+                    campAltura.setError("Campo Altura em branco !");
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
-                    campPeso.setError("Campo Peso Inválido !");
-                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
+                    campPeso.setError("Campo Peso em branco !");
                     campPeso.requestFocus();
                 } else {
                     open();
                 }
             }
         });
+    }
+
+    //metodo de limpar os campos do EditText
+    @Override
+    public void onClick(View v) {
+            campAltura.getText().clear();
+            campPeso.getText().clear();
     }
 
     public void open() {
@@ -108,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        alertDialogBuilder.setPositiveButton("Correto", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
             }
