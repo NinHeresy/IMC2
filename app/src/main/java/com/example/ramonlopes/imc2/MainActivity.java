@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //metodo de limpar os campos do EditText
     @Override
     public void onClick(View v) {
-            campAltura.getText().clear();
-            campPeso.getText().clear();
+        campAltura.getText().clear();
+        campPeso.getText().clear();
     }
 
     public void open() {
@@ -151,10 +151,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             return true;
         }
-        if (id == R.id.to_share) {
+        if (id == R.id.nav_rights) {
             return true;
         }
-        if (id == R.id.nav_rights) {
+        if (id == R.id.to_tutorial) {
             return true;
         }
         return super.onOptionsItemSelected(item);

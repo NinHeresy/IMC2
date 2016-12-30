@@ -16,14 +16,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn;
-    EditText edtPeso, edtAltura;
-    Spinner spin;
+    public Button btn;
+    public EditText edtPeso, edtAltura;
+    public Spinner spin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +53,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         };
         //obtem qual item da lista foi clicado
         spin.setOnItemSelectedListener(escolha);
-
-        nullcampos();
     }
     //limpa os campos do edtText
     @Override

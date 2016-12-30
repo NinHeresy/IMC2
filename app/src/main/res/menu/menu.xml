@@ -4,9 +4,6 @@
         android:id="@+id/nav_child"
         android:title="IMC para Crianças" />
     <item
-        android:id="@+id/to_share"
-        android:title="Compartilhar" />
-    <item
         android:id="@+id/nav_rights"
         android:title="Copyright" />
     <item
