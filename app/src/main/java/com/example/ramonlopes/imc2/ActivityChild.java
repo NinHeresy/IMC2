@@ -19,7 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityChild extends AppCompatActivity {
+public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
     Button btn;
     EditText edtPeso, edtAltura;
@@ -58,6 +58,12 @@ public class ActivityChild extends AppCompatActivity {
         spin.setOnItemSelectedListener(escolha);
 
         nullcampos();
+    }
+    //limpa os campos do edtText
+    @Override
+    public void onClick(View v) {
+        edtAltura.getText().clear();
+        edtPeso.getText().clear();
     }
 
     public void nullcampos() {

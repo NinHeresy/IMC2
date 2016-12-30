@@ -11,16 +11,25 @@
     tools:context="com.example.ramonlopes.imc2.MainActivity">
     <Button
         android:id="@+id/submit"
-        android:layout_width="203dp"
+        android:layout_width="155dp"
         android:layout_height="52dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
         android:elevation="0dp"
         android:text="Calcular"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="155dp"
+        android:layout_height="52dp"
+        android:elevation="0dp"
+        android:text="Limpar"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/edt2"
@@ -34,10 +43,10 @@
         android:inputType="numberDecimal"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/imgAltura"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
-        android:layout_alignRight="@+id/edt1"
-        android:layout_alignEnd="@+id/edt1" />
+        android:layout_alignRight="@+id/txtcabecalho"
+        android:layout_alignEnd="@+id/txtcabecalho"
+        android:layout_alignLeft="@+id/txtcabecalho"
+        android:layout_alignStart="@+id/txtcabecalho" />
 
     <EditText
         android:id="@+id/edt1"
