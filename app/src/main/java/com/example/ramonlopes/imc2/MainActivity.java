@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                share.putExtra(Intent.EXTRA_TEXT,"Fiz o meu IMC e o resultado foi " + resultIMC +
+                share.putExtra(Intent.EXTRA_TEXT,"Fiz o meu IMC e o resultado foi " + resultIMC +  "." +
                         " Site/ http://www.calculoimc.com.br/");
                 startActivity(Intent.createChooser(share,"Compartilhar"));
 
