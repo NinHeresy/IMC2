@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
-    public Button btn,btnlimpar;
+    public Button btn, btnlimpar;
     public EditText edtPeso, edtAltura;
     public Spinner spin;
 
@@ -35,7 +35,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
 
         btnlimpar.setOnClickListener(this);
 
-
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_child, android.R.layout.simple_list_item_1);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
         spin.setAdapter(adapter);
@@ -49,6 +48,7 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(getApplicationContext(), "Selecionado o item = " + i, Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -56,13 +56,19 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         };
         //obtem qual item da lista foi clicado
         spin.setOnItemSelectedListener(escolha);
+
+
+        //chamada do método de verificação dos campos
+        nullcampos();
     }
-    //limpa os campos do edtText
+
+    //limpa os campos do editText
     @Override
     public void onClick(View v) {
         edtAltura.getText().clear();
         edtPeso.getText().clear();
     }
+
 
     public void nullcampos() {
         //verificando se os campos estao preenchidos
@@ -70,11 +76,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 if (edtAltura.getText().toString().length() == 0) {
-                    edtAltura.setError("Campo Altura Inválido !");
+                    edtAltura.setError("Campo Altura em branco !");
                     //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     edtAltura.requestFocus();
                 } else if (edtPeso.getText().toString().length() == 0) {
-                    edtPeso.setError("Campo Peso Inválido !");
+                    edtPeso.setError("Campo Peso em branco !");
                     //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     edtPeso.requestFocus();
                 } else {

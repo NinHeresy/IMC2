@@ -118,11 +118,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialogBuilder.setNegativeButton("Compartilhar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                share.putExtra(Intent.EXTRA_TEXT,"Fiz o meu IMC e o resultado foi " + resultIMC +  "." +
+                share.putExtra(Intent.EXTRA_TEXT, "Fiz o meu IMC e o resultado foi " + resultIMC + "." +
                         " Site/ http://www.calculoimc.com.br/");
-                startActivity(Intent.createChooser(share,"Compartilhar via"));
+                startActivity(Intent.createChooser(share, "Compartilhar via"));
 
             }
         });
