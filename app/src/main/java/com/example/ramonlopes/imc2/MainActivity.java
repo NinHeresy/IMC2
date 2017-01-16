@@ -62,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void open() {
         Double resultadoImc;
-        Float altura, peso;
+        final Float altura, peso;
 
         altura = Float.parseFloat(campAltura.getText().toString());
         peso = Float.parseFloat(campPeso.getText().toString());
 
         resultadoImc = peso / (Math.pow(altura, 2));
-        String resultIMC = String.format("%.2f", resultadoImc);
+        final String resultIMC = String.format("%.2f", resultadoImc);
 
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -118,6 +118,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialogBuilder.setNegativeButton("Compartilhar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.putExtra(Intent.EXTRA_TEXT,"Fiz o meu IMC e o resultado foi " + resultIMC +
+                        " Site/ http://www.calculoimc.com.br/");
+                startActivity(Intent.createChooser(share,"Compartilhar"));
 
             }
         });
