@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
-    public Button btn;
+    public Button btn,btnlimpar;
     public EditText edtPeso, edtAltura;
     public Spinner spin;
 
@@ -28,9 +28,12 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_main2);
 
         btn = (Button) findViewById(R.id.submit);
+        btnlimpar = (Button) findViewById(R.id.btnclear);
         edtAltura = (EditText) findViewById(R.id.edt1);
         edtPeso = (EditText) findViewById(R.id.edt2);
         spin = (Spinner) findViewById(R.id.spinner);
+
+        btnlimpar.setOnClickListener(this);
 
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_child, android.R.layout.simple_list_item_1);
