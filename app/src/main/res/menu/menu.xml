@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_child"
         android:title="IMC para Crianças" />
@@ -10,4 +11,8 @@
         android:id="@+id/to_tutorial"
         android:title="Recomendações"
         />
+    <!--<item android:id="@+id/action_shared"
+        android:title="Share"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        app:showAsAction="ifRoom" /> -->
 </menu>

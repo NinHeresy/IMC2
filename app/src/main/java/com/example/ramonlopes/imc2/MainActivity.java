@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 share.setType("text/plain");
                 share.putExtra(Intent.EXTRA_TEXT,"Fiz o meu IMC e o resultado foi " + resultIMC +  "." +
                         " Site/ http://www.calculoimc.com.br/");
-                startActivity(Intent.createChooser(share,"Compartilhar"));
+                startActivity(Intent.createChooser(share,"Compartilhar via"));
 
             }
         });
