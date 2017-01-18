@@ -18,4 +18,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="EditText 02"/>
+
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_pirates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teste" />
+
+        <RadioButton
+            android:id="@+id/radio_ninjas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teste1" />
+    </RadioGroup>
 </LinearLayout>

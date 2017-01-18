@@ -4,12 +4,10 @@
     <item
         android:id="@+id/nav_child"
         android:title="IMC para Crianças" />
-    <item
-        android:id="@+id/nav_rights"
-        android:title="Copyright" />
+
     <item
         android:id="@+id/to_tutorial"
-        android:title="Recomendações"
+        android:title="Sobre o IMC"
         />
     <!--<item android:id="@+id/action_shared"
         android:title="Share"

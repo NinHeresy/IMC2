@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:background="@color/LightBlue"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/activity_horizontal_margin"
@@ -74,7 +73,7 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/str_top"
-        android:textColor="@color/Black"
+        android:textColor="@color/Blue"
         android:textSize="17sp" />
 
     <ImageView
@@ -95,11 +94,9 @@
         android:layout_alignTop="@+id/edt2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/spinner"
         android:layout_above="@+id/textView"
         android:layout_alignRight="@+id/imgAltura"
-        android:layout_alignEnd="@+id/imgAltura"
-        android:layout_toLeftOf="@+id/spinner" />
+        android:layout_alignEnd="@+id/imgAltura" />
 
     <TextView
         android:id="@+id/textView"
@@ -112,31 +109,17 @@
         android:fontFamily="sans-serif-condensed"
         android:text="Sexo:"
         android:textColor="@color/Black"
-        android:textSize="22sp"
-        android:layout_toStartOf="@+id/spinner"
-        android:layout_toLeftOf="@+id/spinner" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/sexo_child"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/edt1"
-        android:layout_alignStart="@+id/edt1"
-        android:layout_alignRight="@+id/edt1"
-        android:layout_alignEnd="@+id/edt1" />
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/texidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
         android:text="Idade:"
         android:textColor="@color/Black"
         android:textSize="22sp"
-        android:layout_below="@+id/spinner"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/radioGroup"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -145,14 +128,41 @@
         style="@style/EditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/texidade"
-        android:layout_alignBottom="@+id/texidade"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
         android:hint="Digite sua Idade"
         android:inputType="numberDecimal"
         android:maxLength="2"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/texidade"
+        android:layout_alignBottom="@+id/texidade"
+        android:layout_alignLeft="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="33dp"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/edt2"
+        android:layout_alignLeft="@+id/edt2"
+        android:layout_alignStart="@+id/edt2"
+        android:layout_alignRight="@+id/txtcabecalho"
+        android:layout_alignEnd="@+id/txtcabecalho">
+        <RadioButton
+            android:id="@+id/radioMen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homem" />
+
+        <RadioButton
+            android:id="@+id/radiowoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:text="Mulher " />
+    </RadioGroup>
+
 </RelativeLayout>
 

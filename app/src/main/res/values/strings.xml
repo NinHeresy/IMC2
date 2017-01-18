@@ -16,6 +16,16 @@
         <item>Feminino</item>
     </string-array>
 
+    <string name="copy">
+        <b> Dúvidas sobre o IMC</b>
+           <b> O que significa IMC?</b>- IMC é uma sigla utilizada para Índice de Massa Corporal, que é uma medida utilizada para medir a obesidade.
 
+           <b> Como fazer o cálculo do IMC?</b> - O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
 
+            <b>O IMC é o mesmo para crianças e adultos?</b> - Não. Para crianças e adolescentes (de 6 a 15 anos), o cálculo do IMC obedece essa outra tabela.
+
+            <b>Quais são as limitações do IMC?</b> - O IMC pode apresentar alterações, dependendo de fatores como a prática de exercícios físicos.
+
+            <b>O cálculo do IMC é diferente para mulheres e homens?</b> - Não, o IMC se calcula igual para homens e mulheres.
+    </string>
 </resources>

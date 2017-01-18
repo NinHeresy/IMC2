@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         campAltura.getText().clear();
         campPeso.getText().clear();
+
     }
 
     public void open() {
@@ -155,9 +156,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.nav_child) {
             Intent intent = new Intent(this, ActivityChild.class);
             startActivity(intent);
-            return true;
-        }
-        if (id == R.id.nav_rights) {
             return true;
         }
         if (id == R.id.to_tutorial) {

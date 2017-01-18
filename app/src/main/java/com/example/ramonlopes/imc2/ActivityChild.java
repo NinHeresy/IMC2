@@ -3,6 +3,7 @@ package com.example.ramonlopes.imc2;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,15 +13,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
     public Button btn, btnlimpar;
-    public EditText edtPeso, edtAltura;
-    public Spinner spin;
+    public EditText edtPeso, edtAltura, edtidade;
+    public RadioButton radiowom, radiomen;
+    public RadioGroup buttonSelect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,36 +35,36 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         btn = (Button) findViewById(R.id.submit);
         btnlimpar = (Button) findViewById(R.id.btnclear);
         edtAltura = (EditText) findViewById(R.id.edt1);
+        edtidade = (EditText) findViewById(R.id.editIdade);
         edtPeso = (EditText) findViewById(R.id.edt2);
-        spin = (Spinner) findViewById(R.id.spinner);
 
         btnlimpar.setOnClickListener(this);
-
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_child, android.R.layout.simple_list_item_1);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spin.setAdapter(adapter);
-
-        final AdapterView.OnItemSelectedListener escolha = new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 1) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o item = " + i, Toast.LENGTH_SHORT).show();
-                } else if (i == 2) {
-                    Toast.makeText(getApplicationContext(), "Selecionado o item = " + i, Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        };
-        //obtem qual item da lista foi clicado
-        spin.setOnItemSelectedListener(escolha);
-
-
+        //campo do raioButton
+        chekec();
         //chamada do método de verificação dos campos
         nullcampos();
+    }
+
+    public void chekec() {
+        //cheked
+        radiomen = (RadioButton) findViewById(R.id.radioMen);
+        radiowom = (RadioButton) findViewById(R.id.radiowoman);
+        buttonSelect = (RadioGroup) findViewById(R.id.radioGroup);
+
+        buttonSelect.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkId) {
+                switch (checkId) {
+                    case R.id.radioMen:
+                        Toast.makeText(getApplicationContext(), "Homem !" + checkId, Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.radiowoman:
+                        Toast.makeText(getApplicationContext(), "Mulher !" + checkId, Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+
     }
 
     //limpa os campos do editText
@@ -67,8 +72,18 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         edtAltura.getText().clear();
         edtPeso.getText().clear();
+        edtidade.getText().clear();
     }
 
+   /* public void numError() {
+        String num = edtidade.getText().toString();
+        int age = Integer.parseInt(num);
+
+        if (age >= 15) {
+            edtidade.setError("Idade não pode ser maior que 15 anos!!");
+            btn.setEnabled(false);
+        }
+    }*/
 
     public void nullcampos() {
         //verificando se os campos estao preenchidos
@@ -77,12 +92,15 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
             public void onClick(View view) {
                 if (edtAltura.getText().toString().length() == 0) {
                     edtAltura.setError("Campo Altura em branco !");
-                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     edtAltura.requestFocus();
+                    btn.setEnabled(false);
                 } else if (edtPeso.getText().toString().length() == 0) {
                     edtPeso.setError("Campo Peso em branco !");
-                    //Toast.makeText(getApplicationContext(), "Campo Altura está vazio!", Toast.LENGTH_SHORT).show();
                     edtPeso.requestFocus();
+                    btn.setEnabled(false);
+                } else if (edtidade.getText().toString().length() == 0) {
+                    edtidade.setError("Campo Peso em branco !");
+                    edtidade.requestFocus();
                 } else {
                     calcChild();
                 }
@@ -102,8 +120,15 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         resultadoImc = peso / Math.pow(altura, 2);
         String resultIMC = String.format("%.2f", resultadoImc);
 
+        //campo de idade
+        String num = edtidade.getText().toString();
+        int age = Integer.parseInt(num);
+
+
+
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        if (resultadoImc < 17) {
+        if ( resultadoImc < 17) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
             alertDialogBuilder.setMessage("MUITO ABAIXO DO PESO!" +
                     "\nPara sua altura, o peso ideal está entre: 50kg e 60kg\n" +
@@ -173,6 +198,8 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.rights_child) {
+
+
             return true;
         }
         return super.onOptionsItemSelected(item);
