@@ -9,14 +9,16 @@
     <string name="app_crianca">IMC para Criança</string>
 
     <string name="copy">
-        <![CDATA[<h2><p><b>DÚVIDAS SOBRE O IMC</b></h2>
+        <![CDATA[<h3><b>DÚVIDAS SOBRE O IMC</b></h3>
             <p><b>O que significa IMC ? </b></p>IMC é uma sigla utilizada para Índice de Massa Corporal, que é uma medida utilizada para medir a obesidade.
             <p><b>Como fazer o cálculo do IMC ? </b></p>O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
             <p><b>O IMC é o mesmo para crianças e adultos ?  </b></p>Não. Para crianças e adolescentes (de 6 a 15 anos), o cálculo do IMC obedece essa outra tabela.
+            <i><a href="http://www.calculoimc.com.br/imc-infantil/">Veja..</i></a>
             <p><b><i>Obs: Na tela anterior temos o cálculo para crianças.</i></b></p>
             <p><b>Quais são as limitações do IMC ? </b></p>O IMC pode apresentar alterações, dependendo de fatores como a prática de exercícios físicos.
             <p><b>O cálculo do IMC é diferente para mulheres e homens ? </b></p>Não, o IMC se calcula igual para homens e mulheres.
-            <p><i><b>Alerta sobre a Obesidade:</b></i> <a href="http://www.copacabanarunners.net/obesidade-no-brasil.html">Leia no Site</a></p>
+            <p><i><b>Advertência:</b></i> <a href="http://www.copacabanarunners.net/obesidade-no-brasil.html">Leia....</a></p>
+
     ]]>
     </string>
 
