@@ -93,11 +93,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                 if (edtAltura.getText().toString().length() == 0) {
                     edtAltura.setError("Campo Altura em branco !");
                     edtAltura.requestFocus();
-                    btn.setEnabled(false);
+                    //btn.setEnabled(false);
                 } else if (edtPeso.getText().toString().length() == 0) {
                     edtPeso.setError("Campo Peso em branco !");
                     edtPeso.requestFocus();
-                    btn.setEnabled(false);
+                    //btn.setEnabled(false);
                 } else if (edtidade.getText().toString().length() == 0) {
                     edtidade.setError("Campo Peso em branco !");
                     edtidade.requestFocus();

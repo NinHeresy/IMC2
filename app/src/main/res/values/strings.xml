@@ -8,24 +8,23 @@
     <!--aplication IMC crianca activity2 -->
     <string name="app_crianca">IMC para Criança</string>
 
-
-    <!--SPINNER CHILD-->
-    <string-array name="sexo_child">
-        <item>Escolha uma opção:</item>
-        <item>Masculino</item>
-        <item>Feminino</item>
-    </string-array>
-
     <string name="copy">
-        <b> Dúvidas sobre o IMC</b>
-           <b> O que significa IMC?</b>- IMC é uma sigla utilizada para Índice de Massa Corporal, que é uma medida utilizada para medir a obesidade.
-
-           <b> Como fazer o cálculo do IMC?</b> - O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
-
-            <b>O IMC é o mesmo para crianças e adultos?</b> - Não. Para crianças e adolescentes (de 6 a 15 anos), o cálculo do IMC obedece essa outra tabela.
-
-            <b>Quais são as limitações do IMC?</b> - O IMC pode apresentar alterações, dependendo de fatores como a prática de exercícios físicos.
-
-            <b>O cálculo do IMC é diferente para mulheres e homens?</b> - Não, o IMC se calcula igual para homens e mulheres.
+        <![CDATA[<p><b>DÚVIDAS SOBRE O IMC</b>
+            <p><b>O que significa IMC ? </b></p>IMC é uma sigla utilizada para Índice de Massa Corporal, que é uma medida utilizada para medir a obesidade.
+            <p><b>Como fazer o cálculo do IMC ? </b></p>O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
+            <p><b>O IMC é o mesmo para crianças e adultos ?  </b></p>Não. Para crianças e adolescentes (de 6 a 15 anos), o cálculo do IMC obedece essa outra tabela.
+            <p><b><i>Obs: Na tela anterior temos o cálculo para crianças.</i></b></p>
+            <p><b>Quais são as limitações do IMC ? </b></p>O IMC pode apresentar alterações, dependendo de fatores como a prática de exercícios físicos.
+            <p><b>O cálculo do IMC é diferente para mulheres e homens ? </b></p>Não, o IMC se calcula igual para homens e mulheres.
+            <p><i><b>Para mais informações no site:</b></i> <a href="http://www.copacabanarunners.net/obesidade-no-brasil.html">cálculoImc</a></p>
+    ]]>
     </string>
+
+
+    <string name="text">
+        <![CDATA[
+            <p>This is a html-formatted string with <b>bold</b> and <i>italic</i> text</p>
+            <p>This is another paragraph of the same string.</p>
+         ]]>
+</string>
 </resources>
