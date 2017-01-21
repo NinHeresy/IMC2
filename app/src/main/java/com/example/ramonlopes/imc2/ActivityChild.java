@@ -56,10 +56,9 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
             public void onCheckedChanged(RadioGroup group, @IdRes int checkId) {
                 switch (checkId) {
                     case R.id.radioMen:
-                        Toast.makeText(getApplicationContext(), "Homem !" + checkId, Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.radiowoman:
-                        Toast.makeText(getApplicationContext(), "Mulher !" + checkId, Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -74,16 +73,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         edtPeso.getText().clear();
         edtidade.getText().clear();
     }
-
-   /* public void numError() {
-        String num = edtidade.getText().toString();
-        int age = Integer.parseInt(num);
-
-        if (age >= 15) {
-            edtidade.setError("Idade não pode ser maior que 15 anos!!");
-            btn.setEnabled(false);
-        }
-    }*/
 
     public void nullcampos() {
         //verificando se os campos estao preenchidos
@@ -108,11 +97,57 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    //verificando a idade do child
+    public void sexoChild() {
+        Double resultadoImc;
+        float altura, peso;
+        int age;
+
+        altura = Float.parseFloat(edtAltura.getText().toString());
+        peso = Float.parseFloat(edtPeso.getText().toString());
+        age = Integer.parseInt(edtidade.getText().toString());
+
+        resultadoImc = peso / Math.pow(altura, 2);
+        String resultIMC = String.format("%.2f", resultadoImc);
+        //campo de idade
+        String num = edtidade.getText().toString();
+        age = Integer.parseInt(num);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        if (age == 6) {
+            alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
+            alertDialogBuilder.setMessage("Normal!\n" +
+                    "Resultado: " + resultIMC);
+
+        } else {
+            alertDialogBuilder.setTitle("ALERTA!");
+            alertDialogBuilder.setMessage("Idae não pode ser maior que 15 anos, e nem menor que 6 anos !");
+        }
+
+
+        alertDialogBuilder.setNegativeButton("Compartilhar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alertDialogBuilder.setPositiveButton("Correto", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+
+    }
+
+
     //Math do IMC
     public void calcChild() {
 
         Double resultadoImc;
-        Float altura, peso;
+        float altura, peso;
 
         altura = Float.parseFloat(edtAltura.getText().toString());
         peso = Float.parseFloat(edtPeso.getText().toString());
@@ -125,10 +160,8 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         int age = Integer.parseInt(num);
 
 
-
-
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        if ( resultadoImc < 17) {
+        if (resultadoImc < 17) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
             alertDialogBuilder.setMessage("MUITO ABAIXO DO PESO!" +
                     "\nPara sua altura, o peso ideal está entre: 50kg e 60kg\n" +

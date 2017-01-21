@@ -1,10 +1,13 @@
 package com.example.ramonlopes.imc2;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,9 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.androidannotations.annotations.Click;
-
-import java.util.Objects;
+import es.dmoral.toasty.Toasty;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public EditText campPeso;
     public EditText campAltura;
     Button btn, btnLimp;
+    public Context context;
 
 
     @Override
@@ -37,14 +39,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLimp.setOnClickListener(this);
 
 
+        //tooblar
+        // Toolbar mToolbar = (Toolbar) findViewById(R.id.my_tooblar);
+        // mToolbar.setTitle("Indice de Massa Corporal");
+        // mToolbar.setSubtitle("IMC");
+        //setSupportActionBar(mToolbar);
+
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().length() == 0) {
-                    campAltura.setError("Campo Altura em branco !");
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources().getColor(R.color.colorPrimaryDark), Toast.LENGTH_SHORT, true, true).show();
+                    //Toasty.error(getApplicationContext(), "Preencha o campo Altura !", Toast.LENGTH_SHORT, true).show();
+                    //campAltura.setError("Campo Altura em branco !");
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
-                    campPeso.setError("Campo Peso em branco !");
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Peso !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources().getColor(R.color.colorPrimaryDark), Toast.LENGTH_SHORT, true, true).show();
+                    //campPeso.setError("Campo Peso em branco !");
                     campPeso.requestFocus();
                 } else {
                     open();
@@ -61,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     public void open() {
         Double resultadoImc;
         final Float altura, peso;
@@ -70,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         resultadoImc = peso / (Math.pow(altura, 2));
         final String resultIMC = String.format("%.2f", resultadoImc);
-
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         if (resultadoImc < 17) {

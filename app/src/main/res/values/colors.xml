@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--cores da toolbar-->
-    <color name="colorPrimary">#03A9F4</color>
-    <color name="colorPrimaryDark">#0288D1</color>
-    <color name="colorAccent">#607D8B</color>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#009688</color>
     <!--cores background do app-->
     <color name="background_color">#E1F5FE</color>
 

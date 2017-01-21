@@ -22,7 +22,6 @@ public class ActivitysobreIMC extends AppCompatActivity {
                 + getString(R.string.copy)
                 + "</p> "
                 + "</body></html>";
-
         web.loadData(texto,"text/html;charset=UTF-8",null);
     }
 }
