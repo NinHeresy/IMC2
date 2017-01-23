@@ -1,6 +1,6 @@
 <resources>
     <!--activity principal-->
-    <string name="app_name">Indice de Massa Corporal</string>
+    <string name="app_name">I.M Corporal</string>
     <string name="name_app">IMC</string>
     <string name="str_top">Preencha os campos abaixos!</string>
     <string name="action_settings">Settings</string>
@@ -21,12 +21,4 @@
 
     ]]>
     </string>
-
-
-    <string name="text">
-        <![CDATA[
-            <p>This is a html-formatted string with <b>bold</b> and <i>italic</i> text</p>
-            <p>This is another paragraph of the same string.</p>
-         ]]>
-</string>
 </resources>

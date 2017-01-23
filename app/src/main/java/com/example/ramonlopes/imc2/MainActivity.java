@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public EditText campPeso;
     public EditText campAltura;
-    Button btn, btnLimp;
+    public Button btn, btnLimp;
     public Context context;
 
 
@@ -51,13 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 if (campAltura.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
-                            .getColor(R.color.White), getResources().getColor(R.color.colorPrimaryDark), Toast.LENGTH_SHORT, true, true).show();
+                            .getColor(R.color.White), getResources()
+                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
                     //Toasty.error(getApplicationContext(), "Preencha o campo Altura !", Toast.LENGTH_SHORT, true).show();
                     //campAltura.setError("Campo Altura em branco !");
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
-                    Toasty.custom(getApplicationContext(), "Preencha o campo Peso !", R.drawable.alert, getResources()
-                            .getColor(R.color.White), getResources().getColor(R.color.colorPrimaryDark), Toast.LENGTH_SHORT, true, true).show();
+                    Toasty.custom(getApplicationContext(),
+                            "Preencha o campo Peso !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources()
+                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
                     //campPeso.setError("Campo Peso em branco !");
                     campPeso.requestFocus();
                 } else {
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
                 share.putExtra(Intent.EXTRA_TEXT, "Fiz o meu IMC e o resultado foi " + resultIMC + "." +
-                        " Site/ http://www.calculoimc.com.br/");
+                        " Site: http://www.calculoimc.com.br/");
                 startActivity(Intent.createChooser(share, "Compartilhar via"));
 
             }

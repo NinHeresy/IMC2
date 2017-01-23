@@ -3,6 +3,7 @@ package com.example.ramonlopes.imc2;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import es.dmoral.toasty.Toasty;
 
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
@@ -74,74 +77,54 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         edtidade.getText().clear();
     }
 
+    //verificando se os campos estao preenchidos
     public void nullcampos() {
-        //verificando se os campos estao preenchidos
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (edtAltura.getText().toString().length() == 0) {
-                    edtAltura.setError("Campo Altura em branco !");
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources()
+                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                    //edtAltura.setError("Campo Altura em branco !");
                     edtAltura.requestFocus();
                     //btn.setEnabled(false);
                 } else if (edtPeso.getText().toString().length() == 0) {
-                    edtPeso.setError("Campo Peso em branco !");
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Peso !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources()
+                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                    //edtPeso.setError("Campo Peso em branco !");
                     edtPeso.requestFocus();
                     //btn.setEnabled(false);
                 } else if (edtidade.getText().toString().length() == 0) {
-                    edtidade.setError("Campo Peso em branco !");
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Idade !", R.drawable.alert, getResources()
+                            .getColor(R.color.White), getResources()
+                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                    //edtidade.setError("Campo Peso em branco !");
                     edtidade.requestFocus();
                 } else {
-                    calcChild();
+                    teste();
                 }
             }
         });
     }
 
-    //verificando a idade do child
-    public void sexoChild() {
-        Double resultadoImc;
-        float altura, peso;
-        int age;
-
-        altura = Float.parseFloat(edtAltura.getText().toString());
-        peso = Float.parseFloat(edtPeso.getText().toString());
-        age = Integer.parseInt(edtidade.getText().toString());
-
-        resultadoImc = peso / Math.pow(altura, 2);
-        String resultIMC = String.format("%.2f", resultadoImc);
+    public void teste() {
         //campo de idade
         String num = edtidade.getText().toString();
-        age = Integer.parseInt(num);
+        int age = Integer.parseInt(num);
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        if (age == 6) {
-            alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
-            alertDialogBuilder.setMessage("Normal!\n" +
-                    "Resultado: " + resultIMC);
+        if (age <= 6) {
+            Toasty.custom(getApplicationContext(), "Idade não pode ser menor que 6 anos !", R.drawable.alert, getResources()
+                    .getColor(R.color.White), getResources()
+                    .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
 
-        } else {
-            alertDialogBuilder.setTitle("ALERTA!");
-            alertDialogBuilder.setMessage("Idae não pode ser maior que 15 anos, e nem menor que 6 anos !");
+        }else {
+            calcChild();
         }
 
 
-        alertDialogBuilder.setNegativeButton("Compartilhar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        alertDialogBuilder.setPositiveButton("Correto", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface arg0, int arg1) {
-            }
-        });
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-
-
     }
-
 
     //Math do IMC
     public void calcChild() {
@@ -154,10 +137,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
 
         resultadoImc = peso / Math.pow(altura, 2);
         String resultIMC = String.format("%.2f", resultadoImc);
-
-        //campo de idade
-        String num = edtidade.getText().toString();
-        int age = Integer.parseInt(num);
 
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
