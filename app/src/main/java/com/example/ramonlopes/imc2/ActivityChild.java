@@ -102,8 +102,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                             .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
                     //edtidade.setError("Campo Peso em branco !");
                     edtidade.requestFocus();
-                } else {
-                    teste();
                 }
             }
         });
