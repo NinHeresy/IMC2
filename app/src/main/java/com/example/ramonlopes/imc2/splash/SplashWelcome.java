@@ -46,10 +46,10 @@ public class SplashWelcome extends WelcomeActivity {
 
     }
 
+    //call acitivity Main
     @Override
     protected void onButtonBarFirstPressed() {
         super.onButtonBarFirstPressed();
-
         Intent call = new Intent(SplashWelcome.this, MainActivity.class);
         startActivity(call);
     }

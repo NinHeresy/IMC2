@@ -117,7 +117,7 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                     .getColor(R.color.White), getResources()
                     .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
 
-        }else {
+        } else {
             calcChild();
         }
 
@@ -208,8 +208,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.rights_child) {
-
-
             return true;
         }
         return super.onOptionsItemSelected(item);

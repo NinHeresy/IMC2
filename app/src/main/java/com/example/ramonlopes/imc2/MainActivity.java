@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else if (campPeso.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(),
                             "Preencha o campo Peso !", R.drawable.alert, getResources()
-                            .getColor(R.color.White), getResources()
-                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                                    .getColor(R.color.White), getResources()
+                                    .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
                     //campPeso.setError("Campo Peso em branco !");
                     campPeso.requestFocus();
                 } else {
@@ -182,4 +182,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
