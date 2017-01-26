@@ -1,15 +1,15 @@
-package com.example.ramonlopes.imc2;
+package com.example.ramonlopes.imc2.splash;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.ramonlopes.imc2.MainActivity;
+import com.example.ramonlopes.imc2.R;
 import com.stephentuso.welcome.BasicPage;
 import com.stephentuso.welcome.TitlePage;
 import com.stephentuso.welcome.WelcomeActivity;
 import com.stephentuso.welcome.WelcomeConfiguration;
-import com.stephentuso.welcome.WelcomeFinisher;
 import com.stephentuso.welcome.WelcomeHelper;
 
 public class SplashWelcome extends WelcomeActivity {
@@ -50,8 +50,8 @@ public class SplashWelcome extends WelcomeActivity {
     protected void onButtonBarFirstPressed() {
         super.onButtonBarFirstPressed();
 
-            Toast.makeText(this, "Correto", Toast.LENGTH_SHORT).show();
-
+        Intent call = new Intent(SplashWelcome.this, MainActivity.class);
+        startActivity(call);
     }
 
     @Override

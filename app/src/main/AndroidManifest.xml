@@ -14,7 +14,7 @@
 
         <activity
             android:theme="@style/WelcomeScreenTheme"
-            android:name=".SplashWelcome"
+            android:name="com.example.ramonlopes.imc2.splash.SplashWelcome"
             android:screenOrientation="portrait">
            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,6 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/WelcomeScreenTheme"
             android:screenOrientation="portrait">
         </activity>
     </application>
