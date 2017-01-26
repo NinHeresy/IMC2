@@ -3,11 +3,13 @@ package com.example.ramonlopes.imc2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.stephentuso.welcome.BasicPage;
 import com.stephentuso.welcome.TitlePage;
 import com.stephentuso.welcome.WelcomeActivity;
 import com.stephentuso.welcome.WelcomeConfiguration;
+import com.stephentuso.welcome.WelcomeFinisher;
 import com.stephentuso.welcome.WelcomeHelper;
 
 public class SplashWelcome extends WelcomeActivity {
@@ -38,9 +40,18 @@ public class SplashWelcome extends WelcomeActivity {
                 .page(new BasicPage(0,
                         "Estamos a disposição para te ajudar",
                         "Conte conosco para o que der e vier !!")
-                )
+                ).bottomLayout(WelcomeConfiguration.BottomLayout.BUTTON_BAR_SINGLE)
                 .swipeToDismiss(false)
                 .build();
+
+    }
+
+    @Override
+    protected void onButtonBarFirstPressed() {
+        super.onButtonBarFirstPressed();
+
+            Toast.makeText(this, "Correto", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -49,4 +60,6 @@ public class SplashWelcome extends WelcomeActivity {
         welcomeScreen.onSaveInstanceState(outState);
 
     }
+
+
 }
