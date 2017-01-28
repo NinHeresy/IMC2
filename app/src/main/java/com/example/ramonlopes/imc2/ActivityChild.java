@@ -1,24 +1,17 @@
 package com.example.ramonlopes.imc2;
 
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import es.dmoral.toasty.Toasty;
@@ -26,9 +19,13 @@ import es.dmoral.toasty.Toasty;
 public class ActivityChild extends AppCompatActivity implements View.OnClickListener {
 
     public Button btn, btnlimpar;
-    public EditText edtPeso, edtAltura, edtidade;
-    public RadioButton radiowom, radiomen;
-    public RadioGroup buttonSelect;
+    private EditText edtPeso, edtAltura, edtidade;
+    private RadioButton radiowom, radiomen;
+    private RadioGroup buttonSelect;
+
+    private static final int TIME_OUT = 3000;
+    private static final int MSG_DISMISS_DIALOG = 0;
+    private AlertDialog mAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +43,9 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         chekec();
         //chamada do método de verificação dos campos
         nullcampos();
+
+        //alertOncreate
+        dialogChild();
     }
 
     public void chekec() {
@@ -179,6 +179,31 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+
+    }
+
+    private Handler mHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_DISMISS_DIALOG:
+                    if (mAlertDialog != null && mAlertDialog.isShowing()) {
+                        mAlertDialog.dismiss();
+                    }
+            }
+        }
+    };
+
+
+    private void dialogChild() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("ATENÇÃO:");
+        builder.setMessage("Essa tela abaixo faz somente cálculos de IMC para crianças dos 6 á 15 anos de idade!");
+        builder.setPositiveButton("OK", null)
+                .setNegativeButton(null, null);
+        mAlertDialog = builder.create();
+        mAlertDialog.show();
+        mHandler.sendEmptyMessageDelayed(MSG_DISMISS_DIALOG, TIME_OUT);
 
     }
 }

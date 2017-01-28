@@ -22,11 +22,11 @@
     ]]>
     </string>
     <string name="page1"><![CDATA[O IMC é importante para sabermos os limites de obesidade,
-                            magresa e sobrepeso, e serve principalmente como um marcador de
+                            magresa e sobrepeso. Mas serve principalmente como um marcador de
                             prevenção de doenças cardiovasculares. ]]></string>
-    <string name="page2_string1">Este aplicativo faz cálculos para crianças, dos 6 a 15 anos de idade, idosos acima dos 60 anos !</string>
-    <string name="page2_string2">O cálculo é diferente para meninas e meninos !</string>
+    <string name="page2_string1">Este aplicativo faz cálculos para crianças, jovens, adultos e idosos!</string>
+    <string name="page2_string2">Ter um indice de massa corporal saudável, é importante na prevenção do Infarto, AVC, e do Derrame !</string>
 
     <!--links de sites e -->
-    <string name="site_imc">https://play.google.com/store/apps/details?id=br.com.calculoimc.app&amp;hl=pt_BR</string>
+
 </resources>
