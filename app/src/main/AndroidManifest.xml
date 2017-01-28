@@ -14,6 +14,7 @@
 
         <activity
             android:theme="@style/WelcomeScreenTheme"
+            android:noHistory="true"
             android:name="com.example.ramonlopes.imc2.splash.SplashWelcome"
             android:screenOrientation="portrait">
            <intent-filter>

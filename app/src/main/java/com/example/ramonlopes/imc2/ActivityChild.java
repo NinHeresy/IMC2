@@ -102,26 +102,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                             .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
                     //edtidade.setError("Campo Peso em branco !");
                     edtidade.requestFocus();
+                } else {
+                    calcChild();
                 }
             }
         });
-    }
-
-    public void teste() {
-        //campo de idade
-        String num = edtidade.getText().toString();
-        int age = Integer.parseInt(num);
-
-        if (age <= 6) {
-            Toasty.custom(getApplicationContext(), "Idade não pode ser menor que 6 anos !", R.drawable.alert, getResources()
-                    .getColor(R.color.White), getResources()
-                    .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
-
-        } else {
-            calcChild();
-        }
-
-
     }
 
     //Math do IMC
@@ -195,21 +180,5 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_child, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.rights_child) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

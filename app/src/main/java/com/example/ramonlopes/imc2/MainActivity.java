@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import es.dmoral.toasty.Toasty;
 
 
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public EditText campAltura;
     public Button btn, btnLimp;
     public Context context;
+    public static final String TAG_APP = "Aplicativo IMC";
 
 
     @Override
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         campAltura = (EditText) findViewById(R.id.edt1);
 
         btnLimp.setOnClickListener(this);
+
 
 
         //tooblar
@@ -53,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
                             .getColor(R.color.White), getResources()
                             .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
-                    //Toasty.error(getApplicationContext(), "Preencha o campo Altura !", Toast.LENGTH_SHORT, true).show();
                     //campAltura.setError("Campo Altura em branco !");
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
                 share.putExtra(Intent.EXTRA_TEXT, "Fiz o meu IMC e o resultado foi " + resultIMC + "." +
-                        " Site: http://www.calculoimc.com.br/");
+                        "http://www.calculoimc.com.br/");
                 startActivity(Intent.createChooser(share, "Compartilhar via"));
 
             }

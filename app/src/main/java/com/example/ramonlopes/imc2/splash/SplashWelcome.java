@@ -14,7 +14,8 @@ import com.stephentuso.welcome.WelcomeHelper;
 
 public class SplashWelcome extends WelcomeActivity {
 
-    public WelcomeHelper welcomeScreen;
+    private WelcomeHelper welcomeScreen;
+    public static final String TAG_APP = "Aplicativo IMC";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +30,17 @@ public class SplashWelcome extends WelcomeActivity {
     protected WelcomeConfiguration configuration() {
         return new WelcomeConfiguration.Builder(this)
                 .defaultBackgroundColor(R.color.colorPrimary)
-                .page(new TitlePage(0,
-                        getResources().getString(R.string.teste))
+                .page(new TitlePage(R.drawable.splash_img,
+                        getResources().getString(R.string.page1))
                 )
-                .page(new BasicPage(0,
-                        "Estamos a disposição para te ajudar",
-                        "Conte conosco para o que der e vier !!")
+                .page(new BasicPage(R.drawable.splash_img,
+                        getResources().getString(R.string.page2_string1),
+                        getResources().getString(R.string.page2_string2))
                         .background(R.color.colorPrimary)
                 )
-                .page(new BasicPage(0,
-                        "Estamos a disposição para te ajudar",
-                        "Conte conosco para o que der e vier !!")
-                ).bottomLayout(WelcomeConfiguration.BottomLayout.BUTTON_BAR_SINGLE)
+                .bottomLayout(WelcomeConfiguration.BottomLayout.BUTTON_BAR_SINGLE)
                 .swipeToDismiss(false)
                 .build();
-
     }
 
     //call acitivity Main
@@ -53,6 +50,7 @@ public class SplashWelcome extends WelcomeActivity {
         Intent call = new Intent(SplashWelcome.this, MainActivity.class);
         startActivity(call);
     }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
