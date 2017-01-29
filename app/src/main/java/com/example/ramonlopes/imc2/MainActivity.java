@@ -180,6 +180,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(copy);
             return true;
         }
+        if (id == R.id.old_man){
+            Intent old_man = new Intent(this, OldManActivity.class);
+            startActivity(old_man);
+            return true;
+
+
+        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -36,7 +36,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".OldManActivity"></activity>
+        <activity
+            android:name=".OldManActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

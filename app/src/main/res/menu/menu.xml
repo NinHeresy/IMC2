@@ -6,6 +6,10 @@
         android:title="IMC para Crianças" />
 
     <item
+        android:id="@+id/old_man"
+        android:title="IMC Idoso"
+        />
+    <item
         android:id="@+id/to_tutorial"
         android:title="Sobre o IMC"
         />
