@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Context context;
 
     public static final String TAG_APP = "Aplicativo IMC";
-    private static final int TIME_OUT = 3000;
-    private static final int MSG_DISMISS_DIALOG = 0;
-    private AlertDialog mAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         campAltura = (EditText) findViewById(R.id.edt1);
 
         btnLimp.setOnClickListener(this);
-
-        dialogMain();
 
         //tooblar
         // Toolbar mToolbar = (Toolbar) findViewById(R.id.my_tooblar);
@@ -186,32 +181,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-    //codigo das mensagens no inicio da aplicação
-    private Handler mHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MSG_DISMISS_DIALOG:
-                    if (mAlertDialog != null && mAlertDialog.isShowing()) {
-                        mAlertDialog.dismiss();
-                    }
-            }
-        }
-    };
-
-
-    private void dialogMain() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle("ATENÇÃO:");
-        builder.setMessage("Essa tela abaixo faz somente cálculos de IMC para crianças dos 6 á 15 anos de idade!");
-        builder.setPositiveButton("OK", null)
-                .setNegativeButton(null, null);
-        mAlertDialog = builder.create();
-        mAlertDialog.show();
-        mHandler.sendEmptyMessageDelayed(MSG_DISMISS_DIALOG, TIME_OUT);
-
     }
 }

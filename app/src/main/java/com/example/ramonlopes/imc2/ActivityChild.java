@@ -39,7 +39,7 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         edtPeso = (EditText) findViewById(R.id.edt2);
 
         btnlimpar.setOnClickListener(this);
-        //campo do raioButton
+        //campo do radioButton
         chekec();
         //chamada do método de verificação dos campos
         nullcampos();
@@ -66,7 +66,6 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
-
     }
 
     //limpa os campos do editText

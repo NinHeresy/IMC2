@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ramonlopes.imc2.MainActivity">
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="155dp"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="51dp"
+        android:elevation="0dp"
+        android:text="Calcular"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:elevation="0dp"
+        android:text="Limpar"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt2"
+        style="@style/EditTextStyle"
+        android:layout_width="175dp"
+        android:layout_height="49dp"
+        android:layout_alignEnd="@+id/txtcabecalho"
+        android:layout_alignLeft="@+id/txtcabecalho"
+        android:layout_alignRight="@+id/txtcabecalho"
+        android:layout_alignStart="@+id/txtcabecalho"
+        android:layout_below="@+id/edt1"
+        android:layout_marginTop="56dp"
+        android:hint="Peso (Kg)"
+        android:inputType="numberDecimal"
+        android:maxLength="3"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:id="@+id/edt1"
+        style="@style/EditTextStyle"
+        android:layout_width="175dp"
+        android:layout_height="49dp"
+        android:layout_alignEnd="@+id/txtcabecalho"
+        android:layout_alignLeft="@+id/txtcabecalho"
+        android:layout_alignRight="@+id/txtcabecalho"
+        android:layout_alignStart="@+id/txtcabecalho"
+        android:layout_below="@+id/txtcabecalho"
+        android:layout_marginTop="54dp"
+        android:hint="Altura (M²)"
+        android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/txtcabecalho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/str_top"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/imgAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edt2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/edt1"
+        android:src="@drawable/casal" />
+
+    <ImageView
+        android:id="@+id/imgPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edt2"
+        android:layout_alignEnd="@+id/imgAltura"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imgAltura"
+        android:layout_alignTop="@+id/edt2"
+        android:src="@drawable/peso" />
+
+
+</RelativeLayout>
+
+

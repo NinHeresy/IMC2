@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ramonlopes.imc2">
 
     <application
@@ -13,11 +12,11 @@
         <uses-permission android:name="android.permission.INTERNET" />
 
         <activity
-            android:theme="@style/WelcomeScreenTheme"
+            android:name=".splash.SplashWelcome"
             android:noHistory="true"
-            android:name="com.example.ramonlopes.imc2.splash.SplashWelcome"
-            android:screenOrientation="portrait">
-           <intent-filter>
+            android:screenOrientation="portrait"
+            android:theme="@style/WelcomeScreenTheme">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,20 +28,15 @@
             android:name=".ActivityChild"
             android:label="@string/app_crianca"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ActivitysobreIMC"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".OldManActivity"></activity>
     </application>
 
 </manifest>
