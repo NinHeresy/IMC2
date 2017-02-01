@@ -1,12 +1,19 @@
 <resources>
     <!--activity principal-->
-    <string name="app_name">I.M Corporal</string>
+    <string name="app_name">IMC</string>
     <string name="name_app">IMC</string>
     <string name="str_top">Preencha os campos abaixos!</string>
     <string name="action_settings">Settings</string>
 
     <!--aplication IMC crianca activity2 -->
     <string name="app_crianca">IMC para Criança</string>
+    <!---aplicatiob para oldman-->
+    <string name="oldman">IMC para Idoso</string>
+
+    <!--strings msg_alert-->
+    <string name="msg_alert_alt">Preencha o campo Altura !</string>
+    <string name="msg_alert_peso">Preencha o campo Peso !</string>
+
 
     <string name="copy">
         <![CDATA[<h3><b>DÚVIDAS SOBRE O IMC</b></h3>
@@ -27,6 +34,6 @@
     <string name="page2_string1">Este aplicativo faz cálculos para crianças, jovens, adultos e idosos!</string>
     <string name="page2_string2">Ter um indice de massa corporal saudável, é importante na prevenção do Infarto, AVC, e do Derrame !</string>
 
-    <!--links de sites e -->
+    <!--links the sites  -->
 
 </resources>

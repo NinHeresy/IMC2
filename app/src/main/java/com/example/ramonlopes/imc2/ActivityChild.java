@@ -7,6 +7,7 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,12 +21,10 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
 
     public Button btn, btnlimpar;
     private EditText edtPeso, edtAltura, edtidade;
-    private RadioButton radiowom, radiomen;
-    private RadioGroup buttonSelect;
-
     private static final int TIME_OUT = 3000;
     private static final int MSG_DISMISS_DIALOG = 0;
     private AlertDialog mAlertDialog;
+    private Toolbar mToobar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +37,15 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         edtidade = (EditText) findViewById(R.id.editIdade);
         edtPeso = (EditText) findViewById(R.id.edt2);
 
+        mToobar = (Toolbar) findViewById(R.id.my_tooblar);
+        mToobar.setTitle("IMC para Crianças");
+        mToobar.setNavigationIcon(R.drawable.back_left);
+        setSupportActionBar(mToobar);
+
+
         btnlimpar.setOnClickListener(this);
         //campo do radioButton
-        chekec();
+        check();
         //chamada do método de verificação dos campos
         nullcampos();
 
@@ -48,11 +53,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         dialogChild();
     }
 
-    public void chekec() {
-        //cheked
-        radiomen = (RadioButton) findViewById(R.id.radioMen);
-        radiowom = (RadioButton) findViewById(R.id.radiowoman);
-        buttonSelect = (RadioGroup) findViewById(R.id.radioGroup);
+    public void check() {
+        //checked
+        RadioButton radiomen = (RadioButton) findViewById(R.id.radioMen);
+        RadioButton radiowom = (RadioButton) findViewById(R.id.radiowoman);
+        RadioGroup buttonSelect = (RadioGroup) findViewById(R.id.radioGroup);
 
         buttonSelect.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -84,21 +89,21 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
                 if (edtAltura.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
                             .getColor(R.color.White), getResources()
-                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                            .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //edtAltura.setError("Campo Altura em branco !");
                     edtAltura.requestFocus();
                     //btn.setEnabled(false);
                 } else if (edtPeso.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(), "Preencha o campo Peso !", R.drawable.alert, getResources()
                             .getColor(R.color.White), getResources()
-                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                            .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //edtPeso.setError("Campo Peso em branco !");
                     edtPeso.requestFocus();
                     //btn.setEnabled(false);
                 } else if (edtidade.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(), "Preencha o campo Idade !", R.drawable.alert, getResources()
                             .getColor(R.color.White), getResources()
-                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                            .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //edtidade.setError("Campo Peso em branco !");
                     edtidade.requestFocus();
                 } else {

@@ -3,11 +3,10 @@ package com.example.ramonlopes.imc2;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public EditText campPeso;
     public EditText campAltura;
     public Button btn, btnLimp;
-    public Context context;
+    public Toolbar mToobar;
 
     public static final String TAG_APP = "Aplicativo IMC";
 
@@ -38,29 +37,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         campPeso = (EditText) findViewById(R.id.edt2);
         campAltura = (EditText) findViewById(R.id.edt1);
 
+        mToobar = (Toolbar) findViewById(R.id.my_tooblar);
+        mToobar.setTitle("Indice de Massa Corporal");
+        setSupportActionBar(mToobar);
+
         btnLimp.setOnClickListener(this);
-
-        //tooblar
-        // Toolbar mToolbar = (Toolbar) findViewById(R.id.my_tooblar);
-        // mToolbar.setTitle("Indice de Massa Corporal");
-        // mToolbar.setSubtitle("IMC");
-        //setSupportActionBar(mToolbar);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (campAltura.getText().toString().length() == 0) {
-                    Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
+                    Toasty.custom(getApplicationContext(), getResources().getString(R.string.msg_alert_alt), R.drawable.alert, getResources()
                             .getColor(R.color.White), getResources()
-                            .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                            .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //campAltura.setError("Campo Altura em branco !");
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
                     Toasty.custom(getApplicationContext(),
-                            "Preencha o campo Peso !", R.drawable.alert, getResources()
+                            getResources().getString(R.string.msg_alert_peso), R.drawable.alert, getResources()
                                     .getColor(R.color.White), getResources()
-                                    .getColor(R.color.colorPrimaryDark), Toast.LENGTH_LONG, true, true).show();
+                                    .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //campPeso.setError("Campo Peso em branco !");
                     campPeso.requestFocus();
                 } else {
@@ -78,14 +74,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     private void open() {
         Double resultadoImc;
         final Float altura, peso;
 
         altura = Float.parseFloat(campAltura.getText().toString());
         peso = Float.parseFloat(campPeso.getText().toString());
-
         resultadoImc = peso / (Math.pow(altura, 2));
         final String resultIMC = String.format("%.2f", resultadoImc);
 
@@ -158,18 +152,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //oinspection SimplifiableIfStatement
         if (id == R.id.nav_child) {
             Intent intent = new Intent(this, ActivityChild.class);
             startActivity(intent);
@@ -180,12 +169,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(copy);
             return true;
         }
-        if (id == R.id.old_man){
+        if (id == R.id.old_man) {
             Intent old_man = new Intent(this, OldManActivity.class);
             startActivity(old_man);
             return true;
-
-
         }
         return super.onOptionsItemSelected(item);
     }

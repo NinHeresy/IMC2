@@ -26,16 +26,21 @@
         <!-- activity child -->
         <activity
             android:name=".ActivityChild"
-            android:label="@string/app_crianca"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".ActivitysobreIMC"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".OldManActivity"
             android:parentActivityName=".MainActivity"
