@@ -6,10 +6,13 @@
     <color name="colorAccent">#009688</color>
     <!--cores background do app-->
     <color name="background_color">#E1F5FE</color>
-
-
     <color name="teste">#303F9F</color>
     <color name="toobar">#03A9F4</color>
+
+    <!--cores da toolbar para teste-->
+    <color name="Primary">#009688</color>
+    <color name="PrimaryDark">#00796B</color>
+    <color name="Accent">#009688</color>
 
 
 

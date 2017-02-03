@@ -1,6 +1,8 @@
 package com.example.ramonlopes.imc2;
 
 import android.content.DialogInterface;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.IdRes;
@@ -41,6 +43,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         mToobar.setTitle("IMC para Crianças");
         mToobar.setNavigationIcon(R.drawable.back_left);
         setSupportActionBar(mToobar);
+
+        final Drawable upArrow = getResources().getDrawable(R.drawable.back_left);
+        upArrow.setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+
 
 
         btnlimpar.setOnClickListener(this);

@@ -1,5 +1,7 @@
 package com.example.ramonlopes.imc2;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +29,11 @@ public class OldManActivity extends AppCompatActivity implements View.OnClickLis
         mToobar.setTitle("IMC para Idosos");
         mToobar.setNavigationIcon(R.drawable.back_left);
         setSupportActionBar(mToobar);
+
+        //colcoando o button back em Write
+        final Drawable upArrow = getResources().getDrawable(R.drawable.back_left);
+        upArrow.setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         btnClear.setOnClickListener(this);
     }

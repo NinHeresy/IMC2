@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,11 +14,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/my_tooblar"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <Button
             android:id="@+id/btn"
@@ -28,7 +28,6 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="51dp"
             android:elevation="0dp"
             android:text="Calcular"
             android:textColor="@color/colorPrimaryDark"
@@ -84,13 +83,12 @@
             android:id="@+id/txtcabecalho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/str_top"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="17sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="56dp" />
+            android:textSize="17sp" />
 
         <ImageView
             android:id="@+id/imgAltura"
