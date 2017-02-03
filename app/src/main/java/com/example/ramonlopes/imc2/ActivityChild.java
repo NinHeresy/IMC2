@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.IdRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,10 +45,11 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
         mToobar.setNavigationIcon(R.drawable.back_left);
         setSupportActionBar(mToobar);
 
-        final Drawable upArrow = getResources().getDrawable(R.drawable.back_left);
-        upArrow.setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_ATOP);
-        getSupportActionBar().setHomeAsUpIndicator(upArrow);
-
+        //colcoando o button back em Write
+        final Drawable back = ContextCompat
+                .getDrawable(this,R.drawable.back_left);
+        back.setColorFilter(ContextCompat.getColor(this,R.color.White), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(back);
 
 
         btnlimpar.setOnClickListener(this);

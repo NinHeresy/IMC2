@@ -2,6 +2,7 @@ package com.example.ramonlopes.imc2;
 
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,9 +24,13 @@ public class ActivitysobreIMC extends AppCompatActivity {
         mToobar.setNavigationIcon(R.drawable.back_left);
         setSupportActionBar(mToobar);
 
-        final Drawable upArrow = getResources().getDrawable(R.drawable.back_left);
-        upArrow.setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_ATOP);
-        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        //colcoando o button back em Write
+        final Drawable upArrow = ContextCompat
+                .getDrawable(this,R.drawable.back_left);
+        upArrow.setColorFilter(ContextCompat
+                .getColor(this,R.color.White), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar()
+                .setHomeAsUpIndicator(upArrow);
 
         web = (WebView)findViewById(R.id.webview);
 
