@@ -29,7 +29,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:elevation="0dp"
-            android:text="Calcular"
+            android:text="@string/name_calc"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:elevation="0dp"
-            android:text="Lipmar"
+            android:text="@string/name_button"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -98,7 +98,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/edt1"
-            android:src="@drawable/casal" />
+            android:src="@drawable/couple_50pd" />
 
         <ImageView
             android:id="@+id/imgPeso"
@@ -110,7 +110,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/imgAltura"
             android:layout_alignTop="@+id/edt2"
-            android:src="@drawable/peso" />
+            android:src="@drawable/peso_50pd" />
     </RelativeLayout>
 
 </RelativeLayout>

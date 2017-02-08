@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void open() {
         Double resultadoImc;
-        final Float altura, peso;
+        Float altura, peso;
 
         altura = Float.parseFloat(campAltura.getText().toString());
         peso = Float.parseFloat(campPeso.getText().toString());

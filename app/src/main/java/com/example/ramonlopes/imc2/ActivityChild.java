@@ -42,12 +42,12 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
 
         mToobar = (Toolbar) findViewById(R.id.my_tooblar);
         mToobar.setTitle("IMC para Crianças");
-        mToobar.setNavigationIcon(R.drawable.back_left);
+        mToobar.setNavigationIcon(R.drawable.back);
         setSupportActionBar(mToobar);
 
         //colcoando o button back em Write
         final Drawable back = ContextCompat
-                .getDrawable(this,R.drawable.back_left);
+                .getDrawable(this,R.drawable.back);
         back.setColorFilter(ContextCompat.getColor(this,R.color.White), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(back);
 

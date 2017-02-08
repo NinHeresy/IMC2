@@ -21,12 +21,12 @@ public class ActivitysobreIMC extends AppCompatActivity {
         mToobar = (Toolbar) findViewById(R.id.my_tooblar);
         mToobar.setTitle("Sobre IMC");
         mToobar.setSubtitle("Tire suas duvidas sobre o IMC !");
-        mToobar.setNavigationIcon(R.drawable.back_left);
+        mToobar.setNavigationIcon(R.drawable.back);
         setSupportActionBar(mToobar);
 
         //colcoando o button back em Write
         final Drawable upArrow = ContextCompat
-                .getDrawable(this,R.drawable.back_left);
+                .getDrawable(this,R.drawable.back);
         upArrow.setColorFilter(ContextCompat
                 .getColor(this,R.color.White), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar()
