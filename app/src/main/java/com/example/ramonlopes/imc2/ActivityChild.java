@@ -96,7 +96,8 @@ public class ActivityChild extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 if (edtAltura.getText().toString().length() == 0) {
-                    Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert, getResources()
+                    Toasty.custom(getApplicationContext(), "Preencha o campo Altura !", R.drawable.alert,
+                            getResources()
                             .getColor(R.color.White), getResources()
                             .getColor(R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
                     //edtAltura.setError("Campo Altura em branco !");

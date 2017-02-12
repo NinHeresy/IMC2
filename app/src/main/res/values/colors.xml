@@ -10,6 +10,7 @@
     <color name="toobar">#03A9F4</color>
 
     <!--cores da toolbar para teste-->
+    <color name="accent_color">#607D8B</color>
     <color name="Primary">#009688</color>
     <color name="PrimaryDark">#00796B</color>
     <color name="Accent">#009688</color>

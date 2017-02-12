@@ -45,35 +45,35 @@
             android:id="@+id/edt2"
             style="@style/EditTextStyle"
             android:layout_width="172dp"
-            android:layout_height="51dp"
-            android:layout_alignEnd="@+id/txtcabecalho"
-            android:layout_alignLeft="@+id/txtcabecalho"
-            android:layout_alignRight="@+id/txtcabecalho"
-            android:layout_alignStart="@+id/txtcabecalho"
-            android:layout_below="@+id/imgAltura"
-            android:layout_marginTop="20dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="26dp"
             android:hint="Peso (Kg)"
             android:inputType="numberDecimal"
             android:maxLength="3"
             android:textSize="18sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/edt1"
+            android:layout_alignLeft="@+id/editIdade"
+            android:layout_alignStart="@+id/editIdade"
+            android:layout_alignRight="@+id/txtcabecalho"
+            android:layout_alignEnd="@+id/txtcabecalho" />
 
         <EditText
             android:id="@+id/edt1"
             style="@style/EditTextStyle"
-            android:layout_width="175dp"
+            android:layout_width="172dp"
             android:layout_height="49dp"
-            android:layout_alignEnd="@+id/txtcabecalho"
-            android:layout_alignLeft="@+id/txtcabecalho"
-            android:layout_alignRight="@+id/txtcabecalho"
-            android:layout_alignStart="@+id/txtcabecalho"
-            android:layout_below="@+id/txtcabecalho"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="65dp"
             android:hint="Altura (M²)"
             android:inputType="numberDecimal"
             android:maxLength="4"
             android:textSize="18sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/txtcabecalho"
+            android:layout_alignLeft="@+id/edt2"
+            android:layout_alignStart="@+id/edt2"
+            android:layout_alignRight="@+id/txtcabecalho"
+            android:layout_alignEnd="@+id/txtcabecalho" />
 
         <TextView
             android:id="@+id/txtcabecalho"
@@ -84,8 +84,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="17sp"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imgAltura"
-            android:layout_toEndOf="@+id/imgAltura" />
+            android:layout_centerHorizontal="true" />
 
         <ImageView
             android:id="@+id/imgAltura"
@@ -139,27 +138,27 @@
             style="@style/EditTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/texidade"
-            android:layout_alignBottom="@+id/texidade"
-            android:layout_alignLeft="@+id/radioGroup"
-            android:layout_alignStart="@+id/radioGroup"
             android:hint="Digite sua Idade"
             android:inputType="numberDecimal"
             android:maxLength="2"
             android:textSize="18sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:layout_alignBaseline="@+id/texidade"
+            android:layout_alignBottom="@+id/texidade"
+            android:layout_toRightOf="@+id/texidade"
+            android:layout_toEndOf="@+id/texidade" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/txtcabecalho"
             android:layout_alignLeft="@+id/edt2"
-            android:layout_alignRight="@+id/txtcabecalho"
             android:layout_alignStart="@+id/edt2"
             android:layout_below="@+id/edt2"
             android:layout_marginTop="33dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_alignRight="@+id/edt2"
+            android:layout_alignEnd="@+id/edt2">
 
             <RadioButton
                 android:id="@+id/radioMen"
